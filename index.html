@@ -3,18 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre plateforme Web3</title>
+    <title>Al Samman Web3 Solutions</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
-        p { color: #666; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #1d3557, #457b9d, #a8dadc);
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1d3557;
+        }
+        p {
+            color: #666;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #457b9d;
+        }
     </style>
 </head>
 <body>
-    <h1>Notre plateforme arrive bientôt 🚀</h1>
-    <p>Simplifier la transition vers les paiements Web3.</p>
+    <div class="container">
+        <h1>Bienvenue sur Al Samman Web3 Solutions 🚀</h1>
+        <p>Simplifier la transition vers les paiements Web3 pour les entreprises.</p>
+        <p>Nous facilitons l'accès aux stablecoins et aux transactions crypto de manière sécurisée.</p>
+        
+        <h2>Nous contacter</h2>
+        <form class="contact-form" action="mailto:contact@nomdelaboite.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" placeholder="Votre message" rows="4" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
 </body>
-    <script>
-    document.write('<a href="mailto:samman.sarah@yahoo.fr">Contactez-nous</a>');
-</script>
 </html>
