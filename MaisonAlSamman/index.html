@@ -3,11 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Samman Parfums</title>
+    <title>Maison Al Samman - Arrive Bientôt</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Didot&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Didot', serif;
+            text-align: center;
+            background: url('background-image.jpg') no-repeat center center/cover;
+            color: #FFFFFF;
+        }
+        .coming-soon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+        h1 {
+            font-size: 5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.8);
+            letter-spacing: 5px;
+        }
+        p {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            padding: 14px;
+            font-size: 1.2em;
+            width: 300px;
+            margin-bottom: 20px;
+            border: 2px solid #FFFFFF;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        input::placeholder {
+            color: #FFFFFF;
+        }
+        button {
+            padding: 14px 30px;
+            font-size: 1.3em;
+            border: 2px solid #FFFFFF;
+            border-radius: 50px;
+            background-color: transparent;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+        }
+        button:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 1);
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
+        }
+    </style>
 </head>
 <body>
-    <h1>Découvrez la Maison Al Samman</h1>
-    <p>Un univers de parfums exclusifs et sur-mesure.</p>
-    <a href="/">Retour à l'accueil</a>
+    <section class="coming-soon">
+        <h1>Maison Al Samman</h1>
+        <p>Un parfum d'exception arrive bientôt.</p>
+        <form action="#" method="POST">
+            <input type="email" name="email" placeholder="Entrez votre email" required>
+            <button type="submit">Soyez informé</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
