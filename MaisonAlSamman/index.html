@@ -75,6 +75,12 @@
             color: #000000;
             box-shadow: 0px 0px 25px rgba(255, 255, 255, 1);
         }
+        .confirmation {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #FFFFFF;
+        }
         footer {
             position: absolute;
             bottom: 20px;
@@ -85,15 +91,26 @@
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
     </style>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            window.location.href = `mailto:contact@alsammancommunity.com?subject=Inscription%20Maison%20Al%20Samman&body=Nouvelle%20inscription%20:%20${email}`;
+            
+            document.getElementById('confirmation-message').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <section class="coming-soon">
         <h1>Maison Al Samman</h1>
         <p>Un parfum d'exception arrive bientôt.</p>
-        <form action="#" method="POST">
-            <input type="email" name="email" placeholder="Entrez votre email" required>
+        <form onsubmit="sendEmail(event)">
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
             <button type="submit">Soyez informé</button>
         </form>
+        <p id="confirmation-message" class="confirmation">Merci ! Votre demande a été envoyée.</p>
     </section>
     <footer>
         <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
