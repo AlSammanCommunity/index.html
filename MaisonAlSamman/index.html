@@ -108,23 +108,12 @@
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
     </style>
-    <script>
-        function sendEmail(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            
-            window.location.href = `mailto:contact@alsammancommunity.com?subject=Inscription%20Maison%20Al%20Samman&body=Nouvelle%20inscription%20:%20${email}`;
-            
-            document.getElementById('confirmation-message').style.display = 'block';
-            document.getElementById('home-button').style.display = 'inline-block';
-        }
-    </script>
 </head>
 <body>
     <section class="coming-soon">
         <h1>Maison Al Samman</h1>
         <p>Un parfum d'exception arrive bientôt.</p>
-        <form onsubmit="sendEmail(event)">
+        <form id="subscriptionForm">
             <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
             <button type="submit">Soyez informé</button>
         </form>
@@ -134,5 +123,25 @@
     <footer>
         <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
     </footer>
+    
+    <script>
+        document.getElementById("subscriptionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch("send_email.php", {
+                method: "POST",
+                body: formData
+            }).then(response => response.text())
+              .then(data => {
+                  if (data.trim() === "success") {
+                      document.getElementById("confirmation-message").style.display = "block";
+                      document.getElementById("home-button").style.display = "inline-block";
+                  } else {
+                      alert("Une erreur est survenue. Essayez plus tard.");
+                  }
+              });
+        });
+    </script>
 </body>
 </html>
