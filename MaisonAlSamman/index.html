@@ -81,6 +81,23 @@
             font-size: 1.5em;
             color: #FFFFFF;
         }
+        .home-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            border: 2px solid #FFFFFF;
+            border-radius: 50px;
+            background-color: transparent;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
         footer {
             position: absolute;
             bottom: 20px;
@@ -99,6 +116,7 @@
             window.location.href = `mailto:contact@alsammancommunity.com?subject=Inscription%20Maison%20Al%20Samman&body=Nouvelle%20inscription%20:%20${email}`;
             
             document.getElementById('confirmation-message').style.display = 'block';
+            document.getElementById('home-button').style.display = 'inline-block';
         }
     </script>
 </head>
@@ -111,6 +129,7 @@
             <button type="submit">Soyez informé</button>
         </form>
         <p id="confirmation-message" class="confirmation">Merci ! Votre demande a été envoyée.</p>
+        <a href="index.html" id="home-button" class="home-button" style="display: none;">Retour à l'accueil</a>
     </section>
     <footer>
         <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
