@@ -1,4 +1,79 @@
-<h2>Bienvenue sur Al Samman Community</h2>
-<p>Choisissez votre univers :</p>
-<a href="web3/">🌐 Web3 Solutions</a><br>
-<a href="MaisonAlSamman/">🌿 Maison de Parfums</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur Al Samman Community</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: #161b22;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #b185db;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #8b949e;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button {
+            background: linear-gradient(90deg, #9b5de5, #f15bb5);
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(155, 93, 229, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur Al Samman Community ✨</h1>
+        <p>Choisissez votre univers :</p>
+        
+        <div class="button-container">
+            <a href="web3/index.html" class="button">🌐 Web3 Solutions</a>
+            <a href="MaisonAlSamman/index.html" class="button">💎 Maison de Parfums</a>
+        </div>
+    </div>
+</body>
+</html>
