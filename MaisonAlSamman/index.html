@@ -38,65 +38,19 @@
             font-weight: 500;
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        input {
-            padding: 14px;
-            font-size: 1.2em;
-            width: 300px;
-            margin-bottom: 20px;
-            border: 2px solid #FFFFFF;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #FFFFFF;
-            text-align: center;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
-        }
-        input::placeholder {
-            color: #FFFFFF;
-        }
-        button {
-            padding: 14px 30px;
-            font-size: 1.3em;
-            border: 2px solid #FFFFFF;
-            border-radius: 50px;
-            background-color: transparent;
-            color: #FFFFFF;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
-        }
-        button:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-            box-shadow: 0px 0px 25px rgba(255, 255, 255, 1);
-        }
-        .confirmation {
-            display: none;
-            margin-top: 20px;
+        .contact {
             font-size: 1.5em;
-            color: #FFFFFF;
+            margin-top: 30px;
+            font-weight: 500;
+            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
-        .home-button {
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 1.2em;
-            border: 2px solid #FFFFFF;
-            border-radius: 50px;
-            background-color: transparent;
+        .contact a {
             color: #FFFFFF;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
             text-decoration: none;
+            font-weight: bold;
         }
-        .home-button:hover {
-            background-color: #FFFFFF;
-            color: #000000;
+        .contact a:hover {
+            text-decoration: underline;
         }
         footer {
             position: absolute;
@@ -113,35 +67,10 @@
     <section class="coming-soon">
         <h1>Maison Al Samman</h1>
         <p>Un parfum d'exception arrive bientôt.</p>
-        <form id="subscriptionForm">
-            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
-            <button type="submit">Soyez informé</button>
-        </form>
-        <p id="confirmation-message" class="confirmation">Merci ! Votre demande a été envoyée.</p>
-        <a href="index.html" id="home-button" class="home-button" style="display: none;">Retour à l'accueil</a>
+        <p class="contact">Contact : <a href="mailto:contact@alsammancommunity.com">contact@alsammancommunity.com</a></p>
     </section>
     <footer>
         <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
     </footer>
-    
-    <script>
-        document.getElementById("subscriptionForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            
-            fetch("send_email.php", {
-                method: "POST",
-                body: formData
-            }).then(response => response.text())
-              .then(data => {
-                  if (data.trim() === "success") {
-                      document.getElementById("confirmation-message").style.display = "block";
-                      document.getElementById("home-button").style.display = "inline-block";
-                  } else {
-                      alert("Une erreur est survenue. Essayez plus tard.");
-                  }
-              });
-        });
-    </script>
 </body>
 </html>
