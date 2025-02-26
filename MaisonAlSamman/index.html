@@ -6,7 +6,6 @@
     <title>Maison Al Samman - Arrive Bientôt</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Didot&display=swap');
-        
         body {
             margin: 0;
             padding: 0;
@@ -38,16 +37,37 @@
             font-weight: 500;
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
+        .cta-button {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-size: 1.3em;
+            border: 2px solid #FFFFFF;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+        }
+        .cta-button:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 1);
+        }
         .contact {
             font-size: 1.5em;
+            color: #FFFFFF;
             margin-top: 30px;
             font-weight: 500;
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
         .contact a {
             color: #FFFFFF;
-            text-decoration: none;
+            cursor: pointer;
             font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
         }
         .contact a:hover {
             text-decoration: underline;
@@ -57,20 +77,12 @@
             bottom: 20px;
             width: 100%;
             text-align: center;
-            font-size: 1.2em;
-            font-weight: 500;
-            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
 <body>
     <section class="coming-soon">
         <h1>Maison Al Samman</h1>
-        <p>Un parfum d'exception arrive bientôt.</p>
-        <p class="contact">Contact : <a href="mailto:contact@alsammancommunity.com">contact@alsammancommunity.com</a></p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+        <p>Découvrez nos parfums inspirés des éditions limitées de Rituals : Hajime et Eau d'Orient.</p>
+        <p>Soyez parmi les premiers à les découvrir en avant-première.</p>
+        <a href="mailto:contact@alsammancommunity.com?subject=Inscription%20Liste%20VIP&body=Bonjour,%0A%0AJe souhaite être ajouté(e) à la liste VIP pour être informé(e) en avant-première du lancement des parfums Hajime et Eau d'Orient.%0A%0AMerci !" class="cta-button">
