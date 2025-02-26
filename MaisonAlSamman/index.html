@@ -59,7 +59,7 @@
         }
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #FFD700, #DAA520);
+            background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
             color: #000;
             padding: 14px 40px;
             text-decoration: none;
@@ -67,14 +67,14 @@
             border-radius: 50px;
             font-weight: bold;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.8);
+            box-shadow: 0px 4px 10px rgba(192, 192, 192, 0.8);
             text-transform: uppercase;
             border: none;
             cursor: pointer;
         }
         .cta-button:hover {
-            background: linear-gradient(135deg, #FFC107, #B8860B);
-            box-shadow: 0px 6px 15px rgba(255, 215, 0, 1);
+            background: linear-gradient(135deg, #D3D3D3, #8F8F8F);
+            box-shadow: 0px 6px 15px rgba(192, 192, 192, 1);
             transform: scale(1.05);
         }
         .confirmation {
@@ -82,7 +82,7 @@
             margin-top: 20px;
             font-size: 1.2em;
             font-weight: bold;
-            color: #FFD700;
+            color: #C0C0C0;
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
         .contact {
@@ -106,35 +106,15 @@
         <p>Découvrez nos parfums inspirés des éditions limitées de Rituals : Alchemy et Eau d'Orient.</p>
         <p>Soyez parmi les premiers à les découvrir en avant-première.</p>
 
-        <form id="subscriptionForm" action="send_email.php" method="post">
+        <form action="https://formspree.io/f/xzzdajyk" method="POST">
             <input type="email" name="email" placeholder="Entrez votre email" required>
             <button type="submit" class="cta-button">Je deviens VIP</button>
         </form>
 
-        <p id="confirmation-message" class="confirmation">Merci ! Vous êtes maintenant sur la liste VIP.</p>
         <p class="contact">Contact : <a href="mailto:contact@alsammancommunity.com">contact@alsammancommunity.com</a></p>
     </section>
     <footer>
         <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
     </footer>
-
-    <script>
-        document.getElementById("subscriptionForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-
-            fetch("send_email.php", {
-                method: "POST",
-                body: formData
-            }).then(response => response.text())
-              .then(data => {
-                  if (data.trim() === "success") {
-                      document.getElementById("confirmation-message").style.display = "block";
-                  } else {
-                      alert("Une erreur est survenue. Essayez plus tard.");
-                  }
-              });
-        });
-    </script>
 </body>
 </html>
