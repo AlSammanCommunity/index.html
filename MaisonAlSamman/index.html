@@ -37,23 +37,53 @@
             font-weight: 500;
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #000;
-            color: #fff;
-            padding: 14px 30px;
-            text-decoration: none;
-            font-size: 1.3em;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            padding: 14px;
+            font-size: 1.2em;
+            width: 300px;
+            margin-bottom: 20px;
             border: 2px solid #FFFFFF;
             border-radius: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        input::placeholder {
+            color: #FFFFFF;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #DAA520);
+            color: #000;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-size: 1.4em;
+            border-radius: 50px;
             font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.8);
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
         }
         .cta-button:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-            box-shadow: 0px 0px 25px rgba(255, 255, 255, 1);
+            background: linear-gradient(135deg, #FFC107, #B8860B);
+            box-shadow: 0px 6px 15px rgba(255, 215, 0, 1);
+            transform: scale(1.05);
+        }
+        .confirmation {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
         }
         .contact {
             font-size: 1.5em;
@@ -61,16 +91,6 @@
             margin-top: 30px;
             font-weight: 500;
             text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
-        }
-        .contact a {
-            color: #FFFFFF;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .contact a:hover {
-            text-decoration: underline;
         }
         footer {
             position: absolute;
@@ -83,6 +103,38 @@
 <body>
     <section class="coming-soon">
         <h1>Maison Al Samman</h1>
-        <p>Découvrez nos parfums inspirés des éditions limitées de Rituals : Hajime et Eau d'Orient.</p>
+        <p>Découvrez nos parfums inspirés des éditions limitées de Rituals : Alchemy et Eau d'Orient.</p>
         <p>Soyez parmi les premiers à les découvrir en avant-première.</p>
-        <a href="mailto:contact@alsammancommunity.com?subject=Inscription%20Liste%20VIP&body=Bonjour,%0A%0AJe souhaite être ajouté(e) à la liste VIP pour être informé(e) en avant-première du lancement des parfums Hajime et Eau d'Orient.%0A%0AMerci !" class="cta-button">
+
+        <form id="subscriptionForm" action="send_email.php" method="post">
+            <input type="email" name="email" placeholder="Entrez votre email" required>
+            <button type="submit" class="cta-button">Je deviens VIP</button>
+        </form>
+
+        <p id="confirmation-message" class="confirmation">Merci ! Vous êtes maintenant sur la liste VIP.</p>
+        <p class="contact">Contact : <a href="mailto:contact@alsammancommunity.com">contact@alsammancommunity.com</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Maison Al Samman. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.getElementById("subscriptionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            fetch("send_email.php", {
+                method: "POST",
+                body: formData
+            }).then(response => response.text())
+              .then(data => {
+                  if (data.trim() === "success") {
+                      document.getElementById("confirmation-message").style.display = "block";
+                  } else {
+                      alert("Une erreur est survenue. Essayez plus tard.");
+                  }
+              });
+        });
+    </script>
+</body>
+</html>
